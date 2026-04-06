@@ -218,11 +218,14 @@ export interface Asset {
   id: string;
   family_id: string;
   name: string;
-  type: AssetType;
-  platform: string | null;
+  asset_type: AssetType;
+  institution: string | null;
+  ticker_symbol: string | null;
   buy_price: number;
   current_value: number;
   quantity: number | null;
+  unit: string | null;
+  buy_date: string | null;
   maturity_date: string | null;
   notes: string | null;
   created_by: string;
