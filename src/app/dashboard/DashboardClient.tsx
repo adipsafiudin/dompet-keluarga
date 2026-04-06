@@ -87,7 +87,7 @@ export default function DashboardClient({
           .filter((t) => t.type === "expense" && t.category_id === cat.id)
           .reduce((s, t) => s + t.amount, 0);
         const pct = (spent / cat.budget_limit) * 100;
-        if (pct >= 70) alerts.push({ category: cat, spent, percentage: pct });
+        if (pct >= 70) alerts.push({ category: cat, spent, percentage: pct, budget_limit: cat.budget_limit, is_over_budget: pct >= 100 });
       }
       setBudgetAlerts(alerts);
     }
