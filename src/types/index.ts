@@ -199,3 +199,33 @@ export interface TransactionFilter {
   search?: string;
   created_by?: string;
 }
+
+// ============================================================
+// Assets
+// ============================================================
+
+export type AssetType =
+  | "saham"
+  | "reksadana"
+  | "emas"
+  | "deposito"
+  | "obligasi"
+  | "kripto"
+  | "properti"
+  | "lainnya";
+
+export interface Asset {
+  id: string;
+  family_id: string;
+  name: string;
+  type: AssetType;
+  platform: string | null;
+  buy_price: number;
+  current_value: number;
+  quantity: number | null;
+  maturity_date: string | null;
+  notes: string | null;
+  created_by: string;
+  created_at: string;
+  updated_at: string;
+}
