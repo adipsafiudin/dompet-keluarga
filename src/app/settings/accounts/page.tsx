@@ -34,7 +34,10 @@ const ACCOUNT_TYPES: {
   value: AccountType;
   label: string;
   emoji: string;
-  Icon: React.ComponentType<{ className?: string }>;
+  Icon: React.ComponentType<{
+    className?: string;
+    style?: React.CSSProperties;
+  }>;
 }[] = [
   { value: "cash", label: "Tunai", emoji: "💵", Icon: Wallet },
   { value: "bank", label: "Bank", emoji: "🏦", Icon: Landmark },
@@ -45,7 +48,7 @@ const ACCOUNT_TYPES: {
 
 const TYPE_ICON_MAP: Record<
   string,
-  React.ComponentType<{ className?: string }>
+  React.ComponentType<{ className?: string; style?: React.CSSProperties }>
 > = {
   cash: Wallet,
   bank: Landmark,

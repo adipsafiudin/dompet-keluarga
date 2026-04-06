@@ -43,7 +43,10 @@ import {
   Check,
 } from "lucide-react";
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+const iconMap: Record<
+  string,
+  React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+> = {
   utensils: Utensils,
   car: Car,
   "shopping-bag": ShoppingBag,
@@ -65,7 +68,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 const accountIconMap: Record<
   string,
-  React.ComponentType<{ className?: string }>
+  React.ComponentType<{ className?: string; style?: React.CSSProperties }>
 > = {
   cash: Wallet,
   bank: Landmark,

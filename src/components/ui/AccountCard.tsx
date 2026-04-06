@@ -9,7 +9,10 @@ import {
   ArrowLeftRight,
 } from "lucide-react";
 
-const typeIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+const typeIcons: Record<
+  string,
+  React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+> = {
   cash: Wallet,
   bank: Landmark,
   e_wallet: Smartphone,

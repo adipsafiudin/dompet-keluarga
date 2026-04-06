@@ -26,7 +26,7 @@ const PAGE_SIZE = 10;
 
 const typeIconMap: Record<
   string,
-  React.ComponentType<{ className?: string }>
+  React.ComponentType<{ className?: string; style?: React.CSSProperties }>
 > = {
   cash: Wallet,
   bank: Landmark,

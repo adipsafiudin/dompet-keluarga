@@ -12,7 +12,10 @@ const schemeOptions: {
   value: ColorScheme;
   label: string;
   desc: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ComponentType<{
+    className?: string;
+    style?: React.CSSProperties;
+  }>;
 }[] = [
   { value: "light", label: "Terang", desc: "Selalu tampilan cerah", icon: Sun },
   {
