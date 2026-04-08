@@ -7,6 +7,7 @@ import { notifyFamilyRefresh } from "@/lib/realtime";
 import { formatRupiah, formatDate, cn } from "@/lib/utils";
 import { useHiddenBalance } from "@/contexts/HiddenBalanceContext";
 import PageHeader from "@/components/layout/PageHeader";
+import { ListPageSkeleton } from "@/components/ui/LoadingSkeleton";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -83,11 +84,7 @@ export default function TransactionDetailPage() {
   }
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-emerald-200 border-t-emerald-500 rounded-full animate-spin" />
-      </div>
-    );
+    return <ListPageSkeleton rows={4} />;
   }
 
   if (!transaction) {

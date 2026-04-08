@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import { notifyFamilyRefresh } from "@/lib/realtime";
 import { cn, formatRupiah } from "@/lib/utils";
 import CurrencyInput from "@/components/ui/CurrencyInput";
+import { ListPageSkeleton } from "@/components/ui/LoadingSkeleton";
 import toast from "react-hot-toast";
 import type {
   Account,
@@ -350,11 +351,7 @@ export default function EditTransactionPage() {
   }
 
   if (fetching) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-emerald-200 border-t-emerald-500 rounded-full animate-spin" />
-      </div>
-    );
+    return <ListPageSkeleton rows={4} />;
   }
 
   return (

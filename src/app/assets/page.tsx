@@ -7,6 +7,7 @@ import { formatRupiah, formatDate, PRESET_COLORS, cn } from "@/lib/utils";
 import { useHiddenBalance } from "@/contexts/HiddenBalanceContext";
 import AppShell from "@/components/layout/AppShell";
 import PageHeader from "@/components/layout/PageHeader";
+import { ListPageSkeleton } from "@/components/ui/LoadingSkeleton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -325,9 +326,7 @@ export default function AssetsPage() {
 
       {/* List per tipe */}
       {loading ? (
-        <div className="flex justify-center py-12">
-          <div className="w-8 h-8 border-4 border-blue-100 border-t-blue-500 rounded-full animate-spin" />
-        </div>
+        <ListPageSkeleton rows={4} />
       ) : assets.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-16 px-8 text-center">
           <span className="text-5xl mb-3">📊</span>

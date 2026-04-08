@@ -28,19 +28,25 @@ interface DashboardClientProps {
   userName: string;
   familyName: string;
   familyId: string;
+  initialAccounts: Account[];
+  initialTransactions: Transaction[];
+  initialBudgetAlerts: BudgetAlert[];
 }
 
 export default function DashboardClient({
   userName,
   familyName,
   familyId,
+  initialAccounts,
+  initialTransactions,
+  initialBudgetAlerts,
 }: DashboardClientProps) {
-  const [accounts, setAccounts] = useState<Account[]>([]);
+  const [accounts, setAccounts] = useState<Account[]>(initialAccounts);
   const [recentTransactions, setRecentTransactions] = useState<Transaction[]>(
-    [],
+    initialTransactions,
   );
-  const [budgetAlerts, setBudgetAlerts] = useState<BudgetAlert[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [budgetAlerts, setBudgetAlerts] = useState<BudgetAlert[]>(initialBudgetAlerts);
+  const [loading, setLoading] = useState(false);
   const { isHidden, toggle, fmt } = useHiddenBalance();
 
   const fetchData = useCallback(async () => {
@@ -142,7 +148,7 @@ export default function DashboardClient({
     };
   }, [familyId, fetchData]);
 
-  if (loading)
+  if (loading && accounts.length === 0)
     return (
       <AppShell>
         <DashboardSkeleton />

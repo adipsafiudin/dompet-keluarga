@@ -6,13 +6,13 @@ import { createClient } from "@/lib/supabase/client";
 import { cn, formatRupiah } from "@/lib/utils";
 import { useHiddenBalance } from "@/contexts/HiddenBalanceContext";
 import AppShell from "@/components/layout/AppShell";
+import { ReportsSkeleton } from "@/components/ui/LoadingSkeleton";
 import {
   ChevronLeft,
   ChevronRight,
   TrendingUp,
   TrendingDown,
   Tag,
-  Loader2,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -401,10 +401,7 @@ export default function LaporanPage() {
 
       {/* ── Content ── */}
       {loading ? (
-        <div className="flex items-center justify-center py-20 gap-2">
-          <Loader2 className="w-5 h-5 animate-spin text-gray-400" />
-          <span className="text-sm text-gray-400">Memuat data tahunan...</span>
-        </div>
+        <ReportsSkeleton />
       ) : (
         <div className="bg-gray-50 min-h-screen pb-8 pt-4 space-y-4 px-4">
           {/* Annual total card */}

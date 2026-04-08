@@ -7,6 +7,7 @@ import { subscribeFamilyRefresh } from "@/lib/realtime";
 import { cn, formatRupiah, getMonthRange, getBudgetColor } from "@/lib/utils";
 import { useHiddenBalance } from "@/contexts/HiddenBalanceContext";
 import AppShell from "@/components/layout/AppShell";
+import { ReportsSkeleton } from "@/components/ui/LoadingSkeleton";
 import {
   ChevronLeft,
   ChevronRight,
@@ -18,7 +19,6 @@ import {
   Smartphone,
   CircleDot,
   Tag,
-  Loader2,
   Users,
 } from "lucide-react";
 import type {
@@ -395,10 +395,7 @@ export default function ReportsPage() {
 
       {/* ── Content ── */}
       {loading ? (
-        <div className="flex items-center justify-center py-20 gap-2">
-          <Loader2 className="w-5 h-5 animate-spin text-gray-400" />
-          <span className="text-sm text-gray-400">Memuat data...</span>
-        </div>
+        <ReportsSkeleton />
       ) : (
         <div className="bg-gray-50 min-h-screen pb-8">
           {/* ───────────── TAB: BULANAN ───────────── */}

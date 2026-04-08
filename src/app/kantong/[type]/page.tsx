@@ -20,6 +20,7 @@ import { formatRupiah, getMonthRange } from "@/lib/utils";
 import { useHiddenBalance } from "@/contexts/HiddenBalanceContext";
 import TransactionCard from "@/components/ui/TransactionCard";
 import EmptyState from "@/components/ui/EmptyState";
+import { TransactionCardSkeleton } from "@/components/ui/LoadingSkeleton";
 import type { Account, Transaction } from "@/types";
 
 const PAGE_SIZE = 10;
@@ -285,8 +286,10 @@ export default function KantongDetailPage() {
           </Link>
         </div>
         {loadingInit ? (
-          <div className="bg-white rounded-2xl border border-gray-100 p-4 text-center text-xs text-gray-400">
-            Memuat...
+          <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="skeleton rounded-2xl h-16 w-28 shrink-0" />
+            ))}
           </div>
         ) : accounts.length === 0 ? (
           <div className="bg-white rounded-2xl border border-gray-100 p-4 text-center text-xs text-gray-400">
@@ -324,9 +327,10 @@ export default function KantongDetailPage() {
         </div>
 
         {loadingInit ? (
-          <div className="bg-white rounded-2xl border border-gray-100 p-6 flex items-center justify-center gap-2">
-            <Loader2 className="w-4 h-4 animate-spin text-gray-400" />
-            <span className="text-xs text-gray-400">Memuat transaksi...</span>
+          <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <TransactionCardSkeleton />
+            <TransactionCardSkeleton />
+            <TransactionCardSkeleton />
           </div>
         ) : transactions.length === 0 ? (
           <EmptyState
