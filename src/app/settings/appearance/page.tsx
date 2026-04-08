@@ -66,7 +66,7 @@ export default function AppearancePage() {
                     style={{
                       backgroundColor: active
                         ? `color-mix(in srgb, var(--primary) 12%, transparent)`
-                        : "#f4f4f5",
+                        : "var(--muted)",
                     }}
                   >
                     <Icon

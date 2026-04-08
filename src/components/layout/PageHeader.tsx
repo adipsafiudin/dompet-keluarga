@@ -17,11 +17,11 @@ export default function PageHeader({
   const router = useRouter();
 
   return (
-    <div className="sticky top-0 z-40 bg-white border-b border-gray-100 px-4 h-14 flex items-center gap-3">
+    <div className="sticky top-0 z-40 bg-white dark:bg-zinc-900 border-b border-gray-100 dark:border-zinc-800 px-4 h-14 flex items-center gap-3">
       {showBack && (
         <button
           onClick={() => router.back()}
-          className="p-1 -ml-1 rounded-lg hover:bg-gray-100 transition-colors"
+          className="p-1 -ml-1 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>

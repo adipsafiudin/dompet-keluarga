@@ -272,7 +272,7 @@ export default function DashboardClient({
             href="/kantong/bayar"
             className="relative rounded-2xl p-4 flex flex-col gap-3 overflow-hidden"
             style={{
-              backgroundColor: "color-mix(in srgb, var(--primary) 10%, #fff)",
+              backgroundColor: "color-mix(in srgb, var(--primary) 10%, var(--card-mix-base))",
             }}
           >
             <div
