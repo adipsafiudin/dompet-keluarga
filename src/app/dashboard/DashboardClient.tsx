@@ -42,10 +42,10 @@ export default function DashboardClient({
   initialBudgetAlerts,
 }: DashboardClientProps) {
   const [accounts, setAccounts] = useState<Account[]>(initialAccounts);
-  const [recentTransactions, setRecentTransactions] = useState<Transaction[]>(
-    initialTransactions,
-  );
-  const [budgetAlerts, setBudgetAlerts] = useState<BudgetAlert[]>(initialBudgetAlerts);
+  const [recentTransactions, setRecentTransactions] =
+    useState<Transaction[]>(initialTransactions);
+  const [budgetAlerts, setBudgetAlerts] =
+    useState<BudgetAlert[]>(initialBudgetAlerts);
   const [loading, setLoading] = useState(false);
   const { isHidden, toggle, fmt } = useHiddenBalance();
 

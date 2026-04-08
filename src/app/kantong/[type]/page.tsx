@@ -288,7 +288,10 @@ export default function KantongDetailPage() {
         {loadingInit ? (
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="skeleton rounded-2xl h-16 w-28 shrink-0" />
+              <div
+                key={i}
+                className="skeleton rounded-2xl h-16 w-28 shrink-0"
+              />
             ))}
           </div>
         ) : accounts.length === 0 ? (

@@ -751,9 +751,7 @@ export default function ReportsPage() {
               <div className="bg-white rounded-3xl shadow-sm p-4 mb-4">
                 <p className="text-xs text-gray-500 mb-1">Total semua dompet</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {fmt(
-                    accounts.reduce((s, a) => s + a.current_balance, 0),
-                  )}
+                  {fmt(accounts.reduce((s, a) => s + a.current_balance, 0))}
                 </p>
                 <p className="text-xs text-gray-400 mt-0.5">
                   {accounts.length} dompet aktif

@@ -317,8 +317,7 @@ export default function AssetsPage() {
               ) : (
                 <TrendingDown className="w-3.5 h-3.5" />
               )}
-              {fmt(Math.abs(totalGain), true)} (
-              {totalGainPct.toFixed(1)}%)
+              {fmt(Math.abs(totalGain), true)} ({totalGainPct.toFixed(1)}%)
             </p>
           </div>
         </div>
