@@ -202,7 +202,7 @@ export default function SettingsPage() {
           {/* ── Family Members Strip ── */}
           {members.length > 0 && (
             <Link href="/settings/family">
-              <div className="bg-white rounded-3xl shadow-sm px-4 py-3.5 flex items-center gap-3 active:bg-gray-50 transition-colors">
+              <div className="bg-white rounded-3xl shadow-sm px-4 py-3.5 flex items-center gap-3 active:bg-gray-50 transition-colors my-2">
                 <div className="flex -space-x-2 shrink-0">
                   {members.slice(0, 5).map((m, idx) => {
                     const color = MEMBER_COLORS[idx % MEMBER_COLORS.length];
